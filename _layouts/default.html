@@ -7,33 +7,47 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 
-<body id="blog" class="green">
-  <div id="wrap">
-    <header role="banner">
-      <div class="container">
-        <h1 id="logo">
-          <a href="http://sproutcore.com">
-            <img src="http://sproutcore.com/img/logo.png" alt="SproutCore">
-          </a>
-        </h1>
-        <nav role="navigation">
-          <ul>
-            <li><a href="http://sproutcore.com/about">About</a></li>
-            <li><a href="http://showcase.sproutcore.com">Showcase</a></li>
-            <li><a href="http://guides.sproutcore.com">Guides</a></li>
-            <li><a href="http://docs.sproutcore.com">Docs</a></li>
-            <li><a href="http://sproutcore.com/community">Community</a></li>
-            <li><a href="http://blog.sproutcore.com">Blog</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-  </div>
-  <div class="container">
+<body id="home" class="home blog green">
+  <header role="banner">
+    <div class="container">
+      <h1 class="logo">
+        <a href="http://sproutcore.com">
+          <img src="http://sproutcore.com/img/logo.png" alt="SproutCore">
+        </a>
+      </h1>
+      <nav role="navigation">
+        <ul>
+          <li><a href="http://sproutcore.com/about">About</a></li>
+          <li><a href="http://showcase.sproutcore.com">Showcase</a></li>
+          <li><a href="http://guides.sproutcore.com">Guides</a></li>
+          <li><a href="http://docs.sproutcore.com">Docs</a></li>
+          <li><a href="http://sproutcore.com/community">Community</a></li>
+          <li><a href="http://blog.sproutcore.com">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div id="content" class="container">
+    <div class="hfeed" role="main">
+      {{ content }}
+    </div>
+    <aside id="sidebar" role="complementary">
+      <a href="https://gitter.im/sproutcore/sproutcore">
+        Join us on Gitter!
+      </a>
+      <nav class="tag">
+        <h1>Tags</h1>
+        <ul>
+          {% for category in site.categories %}
+          <li>{{ category[0] }}</li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </aside>
 
-    {{ content }}
 
   </div><!-- /.container -->
+
 </body>
 
 </html>

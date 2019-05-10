@@ -2,12 +2,23 @@
 layout: default
 title: SproutCore Blog
 ---
-<div class="blurb">
-  <ul class="posts">
+
 
     {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}"
-        title="{{ post.title }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div><!-- /.blurb -->
+  <article class="post type-post status-publish format-standard hentry">
+    <header>
+      <img class="avatar avatar-64 photo" src="http://0.gravatar.com/avatar/6fa92081b3ed457fbc2785e548d4b80c?s=64&d=mm&r=pg">
+      <h1><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h1>
+      <p class="author">written by {{post.author}}</p>
+      <a href="{{ post.url }}" title="{{ post.title }}" rel="bookmark">
+        <time datetime="{{ post.date | date_to_string }}">
+          <abbr>{{ post.date | date: "%b"}}</abbr> {{ post.date | date: "%e"}}
+        </time>
+      </a>
+    </header>
+    <div class="body">
+      {{ post.excerpt }}
+    </div>
+  </article>
+      {% endfor %}
+
