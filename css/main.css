@@ -960,7 +960,7 @@ html.js [role="search"] input[type="reset"] {
 }
 
 .older .button span {
-  background-image: url(../img/left.png);
+  background-image: url('/img/left.png');
 }
 
 [role="main"] > nav .newer {
@@ -971,7 +971,7 @@ html.js [role="search"] input[type="reset"] {
 
 .newer .button span {
   padding: 0 26px 0 0;
-  background-image: url(../img/right.png);
+  background-image: url('/img/right.png');
   background-position: 100% 50%;
 }
 

@@ -4,7 +4,7 @@
 <head>
   <title>{{ page.title }}</title>
   <!-- link to main stylesheet -->
-  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 
 <body id="home" class="home blog green">
@@ -45,8 +45,8 @@
       <nav class="tag">
         <h1>Tags</h1>
         <ul>
-          {% for category in site.categories %}
-          <li><a href="#" >{{ category[0] }}</a></li>
+          {% for tag in site.tags %}
+          <li><a href="#" >{{ tag[0] }}</a></li>
           {% endfor %}
         </ul>
       </nav>
@@ -94,7 +94,7 @@
           <li><a href="http://groups.google.com/group/sproutcore">Subscribe To Mailing List</a></li>
         </ul>
       </div>
-
+      <a class="top" href="#content">Back To Top</a>
     </div>
   </footer>
 </body>

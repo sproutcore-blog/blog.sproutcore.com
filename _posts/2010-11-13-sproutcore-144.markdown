@@ -1,0 +1,46 @@
+---
+author: admin
+comments: true
+date: 2010-11-13 15:56:00+00:00
+layout: post
+link: http://blog.sproutcore.com/sproutcore-144/
+slug: sproutcore-144
+title: SproutCore 1.4.4
+wordpress_id: 23
+post_format:
+- Aside
+tags:
+- Release
+---
+
+SproutCore 1.4.4 is now out! This is mostly a bug fix release, though there are a few things worth noting.
+
+
+
+
+First off, anyone on the bleeding edge of Chrome may have noticed some odd behavior on Chrome 9. This is a bug in Chrome 9, but we've added in a workaround so you don't have to wait on them to fix it.
+
+
+
+
+We've also added support for enabling Chrome Frame in your app, just set `:chrome_frame => true` in your Buildfile config and then we'll automatically add the appropriate meta flag to your index.html.
+
+
+
+
+SC.copy also now has support for deep copy. This means that all children of the item that you're copying will also be copied. To use this, do `SC.copy(obj, YES)`.
+
+
+
+
+Also, we've added a property called SC.buildMode that will return a value of 'debug' when you're running from sc-server.
+
+
+
+
+And finally we've added support for custom MIME types in sc-server. Set `:mime_types => { '.suffix' => 'mime/type' }` in your Buildfile config to get sc-server to use the appropriate MIME type. Remember, this will only help you in development, you'll need to configure your deployment server separately.
+
+
+
+
+As always just run `gem install sproutcore` to get the latest goodness, and feel free to comment here or reach out elsewhere if you've got questions.

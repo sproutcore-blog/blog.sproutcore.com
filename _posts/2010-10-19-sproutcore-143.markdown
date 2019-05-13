@@ -1,0 +1,16 @@
+---
+author: admin
+comments: true
+date: 2010-10-19 20:06:07+00:00
+layout: post
+link: http://blog.sproutcore.com/sproutcore-143/
+slug: sproutcore-143
+title: SproutCore 1.4.3
+wordpress_id: 27
+post_format:
+- Aside
+tags:
+- Release
+---
+
+SproutCore 1.4.3, a bug fix release, is out now! Just `gem install sproutcore` to get the update. For more information see the [Changelog](http://github.com/sproutcore/sproutcore/blob/1-4-stable/CHANGELOG).

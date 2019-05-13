@@ -1,0 +1,17 @@
+---
+author: admin
+comments: true
+date: 2009-05-22 02:21:18+00:00
+layout: post
+link: http://blog.sproutcore.com/hola/
+slug: hola
+title: Hola.
+wordpress_id: 160
+post_format:
+- Aside
+---
+
+This is the new SproutCore blog.  After a year of running on WordPress, we're headed onto Tumblr because, well, its just much nicer.
+
+
+ 

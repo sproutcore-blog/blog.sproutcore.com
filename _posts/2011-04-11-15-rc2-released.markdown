@@ -1,0 +1,85 @@
+---
+author: TomHuda
+comments: true
+date: 2011-04-11 04:26:27+00:00
+layout: post
+link: http://blog.sproutcore.com/15-rc2-released/
+slug: 15-rc2-released
+title: 1.5 RC2 Released
+wordpress_id: 8
+post_format:
+- Aside
+tags:
+- Release
+---
+{% raw %}
+It's been just over a week since the SproutCore 1.5 RC1 was released, and we've been busy fixing many of the bugs reported by our tremendous community. To everyone who reported bugs: thank you! Your suggestions and real-world usage have been instrumental in ensuring production-ready quality as we approach the final release.
+
+
+
+
+Here's what's new in RC2:
+
+
+
+
+**Bug Fixes**
+
+
+
+
+  * A ton of bugfixes to TemplateView
+
+
+  * TemplateCollectionView now works with RecordArrays
+
+
+  * TemplateCollectionView is now much more efficient when the array it is representing changes
+
+
+  * Fixes a bug in the {{#each}} helper where the content was not updating after it changed
+
+
+  * Fixes a bug where {{bindAttr}} was not working when provided with a class attribute
+
+
+  * Explicitly documented the existence of the itemViewTemplate property in TemplateCollectionView
+
+
+  * Fixes a bug where computed properties were not being invalidated when the first property in the path of their dependent key changed
+
+
+  * Removed some trailing commas that were causing errors in Internet Explorer 7
+
+
+  * Fixes a bug where unit tests were failing on Internet Explorer 7
+
+
+  * Resolves an issue where text fields were not able to be activated on Android devices
+
+
+  * Removed an invalid warning when bindings were connected
+
+
+
+**Features**
+
+
+
+
+  * Bindings now fire automatically when a property is changed via the debug console
+
+
+  * Substantial improvements to the inline documentation
+
+
+  * Updated QUnit to latest version
+
+
+**Enumerable Observers**
+While we try our best not to introduce API changes once a release candidate is out, we did have to revisit how enumerable observers (a new 1.5 feature) were implemented. They are now restricted to arrays, and other enumerables that implement SC.Array, such as SC.ArrayController and SC.RecordArray.
+
+This change was necessary since it allows us to prevent materializing records in record arrays, which could number in the thousands or tens of thousands. These observers have been renamed "array content observers" to indicate that they are restricted to ordered lists only. In the future, we will consider adding a similar API for collections where order is unimportant.
+
+Note that in SproutCore, all ordered lists implement SC.Array, not just native Arrays. That means that you can use the new array observers with native Arrays, RecordArrays, SparseArrays, ArrayControllers and any other object that implements the SC.Array protocol.
+{% endraw %}

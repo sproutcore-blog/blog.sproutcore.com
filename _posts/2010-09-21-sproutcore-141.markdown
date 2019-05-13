@@ -1,0 +1,21 @@
+---
+author: admin
+comments: true
+date: 2010-09-21 12:01:25+00:00
+layout: post
+link: http://blog.sproutcore.com/sproutcore-141/
+slug: sproutcore-141
+title: SproutCore 1.4.1
+wordpress_id: 33
+post_format:
+- Aside
+tags:
+- Release
+---
+
+Hot on the heels of the 1.4 release, we've now released 1.4.1. This is a very minor bug fix release with one fix each to Abbot (the build tools) and the Framework. In Abbot, we fixed an issue with string escaping in a call to the YUI Compressor in sc-build. In the Framework, we changed SC.Request's X-SproutCore-Version header to report 1.4 instead of 1.0.
+
+
+
+
+To get the update, just run `gem install sproutcore`.

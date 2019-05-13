@@ -1,0 +1,38 @@
+---
+author: admin
+comments: true
+date: 2010-01-25 07:49:15+00:00
+layout: post
+link: http://blog.sproutcore.com/tasks/
+slug: tasks
+title: Tasks
+wordpress_id: 67
+post_format:
+- Link
+---
+
+Link: [Tasks](http://tasks.sproutcore.com/#project&name=Unallocated%20Tasks)
+
+		
+
+![Tasks Screenshot](http://idisk.me.com/charlesjolley/Public/Pictures/Skitch/Tasks-20100124-234438.png)
+
+
+
+
+In case you haven't been following the mailing list, Suvajit Gupta and some associates have been working on a really nifty software planning tool called Tasks.  They are using Tasks to plan some large software projects internal to their own company and they are also adding features we need to use Tasks to manage the SproutCore project as well.
+
+
+
+
+Thanks to their hard work, we now have an alpha version of Tasks up and running with all of the SproutCore issues ported over from Lighthouse at [tasks.sproutcore.com](http://tasks.sproutcore.com).
+
+
+
+
+Please head on over and give it a try.  Then leave a comment here or get on the SproutCore mailing list and let us know what you think.
+
+
+
+
+There are still a number of rough edges that need to be polished, but it sure is nice to finally have a really fast web-based bug tracking system.

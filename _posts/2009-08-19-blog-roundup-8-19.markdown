@@ -1,0 +1,27 @@
+---
+author: admin
+comments: true
+date: 2009-08-19 16:27:20+00:00
+layout: post
+link: http://blog.sproutcore.com/blog-roundup-8-19/
+slug: blog-roundup-8-19
+title: Blog Roundup 8-19
+wordpress_id: 115
+post_format:
+- Aside
+---
+
+The blog posts are coming fast and furious these days with tons of really useful information on using the SproutCore API.  Here's a couple that I know about:
+
+
+
+
+[It's Got What Plants Crave  » Basic View API (part 1)](http://www.itsgotwhatplantscrave.com/2009/08/17/basic-view-api-part-1/) - great introduction to the View API.  This is a good followup to earlier posts by frozencanuck that take you on a tutorial through the view API.
+
+
+
+
+[Frozencanuck » Formatting a String in SproutCore with fmt](http://frozencanuck.wordpress.com/2009/08/19/formatting-a-string-in-sproutcore-with-fmt/) - The String.fmt() method is a great way to generate combined strings.  This post shows you how.  Note also the String.loc() method, which does the same thing as fmt() but will attempt to localize  your string for you also.
+
+
+ 

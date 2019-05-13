@@ -1,0 +1,31 @@
+---
+author: admin
+comments: true
+date: 2010-10-01 11:04:00+00:00
+layout: post
+link: http://blog.sproutcore.com/sproutcore-142/
+slug: sproutcore-142
+title: SproutCore 1.4.2
+wordpress_id: 31
+post_format:
+- Aside
+tags:
+- Release
+---
+
+SproutCore has now been updated to 1.4.2! This is a minor patch release with a handful of bug fixes to both the framework and to abbot.
+
+
+
+
+In Abbot, we fixed a regression that caused sc_require to fail with uppercase filenames. We also fixed an issue that caused sc_static to load files that only partially matched the requested filename.
+
+
+
+
+Additionally, we made a couple fixes to SC.DateTime and fixed Tab key behavior for SC.SelectFieldView.
+
+
+
+
+To get these updates, just run `gem install sproutcore`.
