@@ -32,14 +32,21 @@
       {{ content }}
     </div>
     <aside id="sidebar" role="complementary">
-      <a href="https://gitter.im/sproutcore/sproutcore">
-        Join us on Gitter!
+      <nav class="gitter">
+        <a href="https://gitter.im/sproutcore/sproutcore">
+          Join us on <br>
+          <img src="/img/gitter-logo.png">
+        </a>
+      </nav>
+      <a href="https://groups.google.com/group/sproutcore">
+        <img src="/img/mailing_list.jpg">
       </a>
+
       <nav class="tag">
         <h1>Tags</h1>
         <ul>
           {% for category in site.categories %}
-          <li>{{ category[0] }}</li>
+          <li><a href="#" >{{ category[0] }}</a></li>
           {% endfor %}
         </ul>
       </nav>
@@ -47,7 +54,49 @@
 
 
   </div><!-- /.container -->
+  <footer>
+    <div class="container">
+      <div class="col">
+        <a href="https://sproutcore.com">
+          <img src="/img/sproutcore_footer.png" alt="SproutCore">
+        </a>
+        <p id="license">
+          Copyright 2019 SproutCore Community<br>
+          SproutCore is under MIT license
+        </p>
+      </div>
+      <nav class="col">
+        <h1>Site Navigation</h1>
+        <ul>
+          <li><a href="https://sproutcore.com/about/">About</a></li>
+          <li><a href="https://showcase.sproutcore.com">Showcase</a></li>
+          <li><a href="https://docs.sproutcore.com">Docs</a></li>
+          <li><a href="https://blog.sproutcore.com">Blog</a></li>
+          <li><a href="https://www.sproutcore.com/install/?redirect=1">Download</a></li>
+          <li><a href="https://sproutcore.com/community/">Community</a></li>
+          <li><a href="https://github.com/sproutcore/sproutcore">GitHub</a></li>
+          <li><a href="https://gitter.im/sproutcore/sproutcore">Contact Us</a></li>
+          <li><a href="https://guides.sproutcore.com">Guides</a></li>
+        </ul>
+        <a href="http://www.w3.org/html/logo/">
+          <img src="/img/html5.png" alt="HTML5 Powered">
+        </a>
+      </nav>
+      <div class="col">
+        <h1>Get in Touch, Stay Informed</h1>
+        <ul class="social">
+          <li><a href="http://twitter.com/sproutcore"><img
+                src="/img/twitter.png" alt="Twitter"></a></li>
+          <li><a href="http://www.facebook.com/sproutcore"><img
+                src="/img/facebook.png" alt="Facebook"></a></li>
+          <li><a href="http://groups.google.com/group/sproutcore"><img
+                src="/img/google.png" alt="Google Groups"></a></li>
+          <li><a href="http://groups.google.com/group/sproutcore">Subscribe To Mailing List</a></li>
+        </ul>
+      </div>
 
+    </div>
+  </footer>
 </body>
 
 </html>

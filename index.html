@@ -4,7 +4,7 @@ title: SproutCore Blog
 ---
 
 
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
   <article class="post type-post status-publish format-standard hentry">
     <header>
       <img class="avatar avatar-64 photo" src="http://0.gravatar.com/avatar/6fa92081b3ed457fbc2785e548d4b80c?s=64&d=mm&r=pg">
@@ -21,4 +21,19 @@ title: SproutCore Blog
     </div>
   </article>
       {% endfor %}
+  <nav>
+    <ul>
+      {% if paginator.next_page %}
+        <li class="older">
+          <a class="button primary small" href="{{ paginator.next_page_path }} "><span>Older posts</span></a>
+        </li>
+      {% endif %}
+      {% if paginator.previous_page %}
+      <li class="newer">
+        <a class="button primary small" href="{{ paginator.previous_page_path }} "><span>Newer posts</span></a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+
 

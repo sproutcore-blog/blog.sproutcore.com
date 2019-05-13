@@ -1,3 +1,6 @@
 name: SproutCore Blog
 markdown: kramdown
 excerpt_separator: <!--more-->
+paginate: 5
+plugins:
+  - jekyll-paginate
