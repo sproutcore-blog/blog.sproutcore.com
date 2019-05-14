@@ -11,7 +11,7 @@ tags:
 - Dispatch
 ---
 {% raw %}
-[![](http://blog.sproutcore.com/wp-content/uploads/2011/06/handlebars-1-300x167.png)](http://blog.sproutcore.com/wp-content/uploads/2011/06/handlebars-1.png)
+[![](/img/handlebars-1-300x167.png)](/img/handlebars-1.png)
 As more people have been using templates to map the state of their views into the DOM, a couple of questions have continually come up. In this week's Dispatch, I want to focus on how SC.TextField solves one of the common questions and offer some advice on building similar custom views.
 
 Let's first specify the common question: How would one go about implementing something like a textarea tag? Just about everyone tries to do it like this:

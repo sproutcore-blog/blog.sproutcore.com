@@ -11,7 +11,7 @@ tags:
 - Dispatch
 ---
 {%raw %}
-[![](http://blog.sproutcore.com/wp-content/uploads/2011/05/sprout7-300x167.jpg)](http://blog.sproutcore.com/wp-content/uploads/2011/05/sprout7.jpg)
+[![](/img/sprout7-300x167.jpg)](/img/sprout7.jpg)
 
 The construction of the view layer has been greatly simplified by the new way of delegating the view's rendering to templates. With templates, most things have gotten easier to do-- particularly view rendering. However, there are a couple of benefits that the older ways of building views provide that became a bit more difficult within templates– namely, building controls. In this post, I'll take you through the ways in which Templates have affected how we construct controls, and how to build yours as efficiently as possible.
 

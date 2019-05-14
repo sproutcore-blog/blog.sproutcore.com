@@ -13,7 +13,7 @@ The SproutCore team is very pleased to announce the final release of SproutCore 
 
 For those wishing to install SproutCore for the first time, please visit [http://sproutcore.com/install/](http://sproutcore.com/install/) for instructions. If you are upgrading from a previous version of SproutCore, simply run the following:
 
-    
+
     gem update sproutcore
 
 
@@ -23,7 +23,7 @@ If you have any trouble installing or upgrading to 1.10, be sure to visit the ma
 # Highlights of Version 1.10.0
 
 
-In this release we dug deep into the core of SproutCore to improve the entire development and runtime experience from start-to-finish. This includes clean-ups of the developer API to improve consistency and memorability; brand new features for automatic layout, transition animations and live updates; extensive internal architectural refactors to boost speed and reduce memory consumption; and more.![](http://blog.sproutcore.com/wp-includes/js/tinymce/plugins/wordpress/img/trans.gif)
+In this release we dug deep into the core of SproutCore to improve the entire development and runtime experience from start-to-finish. This includes clean-ups of the developer API to improve consistency and memorability; brand new features for automatic layout, transition animations and live updates; extensive internal architectural refactors to boost speed and reduce memory consumption; and more.
 
 <!-- more -->We're sure you will find that this is the most stable, usable and best performing version of SproutCore ever. As such, this is a massive update and there are so many improvements and fixes that we can't possibly cover them all, but here is a list of the key features:
 
@@ -52,19 +52,19 @@ There are now five SC.View state changes that you can have transition automatica
 
 
 
-	
+
   * `transitionIn`: Animate each time the view/pane is appended to the document. Ex. `SC.View.BOUNCE_IN`
 
-	
+
   * `transitionOut`: Animate when the view/pane is removed from the document. Ex. `SC.View.SLIDE_OUT`
 
-	
+
   * `transitionShow`: Animate when the view is made visible from being hidden. Ex. `SC.View.SPRING_IN`
 
-	
+
   * `transitionHide`: Animate when the view is hidden from being visible. Ex. `SC.View.FADE_OUT`
 
-	
+
   * `transitionAdjust`: Animate when the view's layout is adjusted. Ex. `SC.View.SMOOTH_ADJUST`
 
 
@@ -82,7 +82,7 @@ Last, but not least, there is one more view that received the [transition treat
 
 Just like the other transitions, it is simply a matter of setting the property on the view like so,
 
-    
+
       transitionSwap: SC.ContainerView.PUSH
 
 
@@ -118,13 +118,13 @@ Formatting dates and times is always a tricky subject, in particular when locali
 
 There is an entire set of default values from the number of years ago to right now to a number of years in the future and of course the strings are completely configurable and localizable. For example,
 
-    
+
       var date = SC.DateTime.create();
       date.toFormattedString("%E"); // "Right now"
-    
+
       date.advance({ minute: 4 });
       date.toFormattedString("%E"); // "In 4 minutes"
-    
+
       date.advance({ day: -7 });
       date.toFormattedString("%E"); // "About a week ago"
 
@@ -166,154 +166,154 @@ This release also includes several memory leak fixes that would have gradually s
 
 
 
-	
+
   * Improves the regular expression used by `SC.RenderContext` to escape strings so that HTML entities like `&apos;` or `&agrave;` are preserved.
 
-	
+
   * Removes the blockers that prevented all browsers that support touch events from using mouse events. This prevented certain configurations of later versions of IE from receiving mouse events.
 
-	
+
   * Adds the concept of Infinity to `SC.IndexSet`. Although, the number of indexes will always be constrained to `Number.MAX_SIZE`, attempting to create a range even in the several hundreds of thousands would freeze the client, because it will attempt to generate hints every 256 items. Instead we can use the concept of Infinity and avoid hinting the infinite range. For one, this allows for infinite arrays and infinite lists to be possible without using really large numbers that are very slow to hint.
 
-	
+
   * Adds `isEditable`, `isDeletable` and `isReorderable` support for item views. This change uses `canEditContent`, `canDeleteContent` and `canReorderContent` to indicate whether to add the respective properties to the item views. For example, this allows you to toggle `canReorderContent` to hide or show a drag handle on item views that have `isReorderable` as a display property. Note: Setting isEditable to false on the collection view overrides the three other properties.
 
-	
+
   * Adds '`sc-item`' class to non-group collection items. Otherwise, you can apply styles to groups, to items and groups, but not items individually without adding custom class names to the example view.
 
-	
+
   * Adds `createdByParent` property that is set to true when the view was instantiated by its parent through `createChildView`.
 
-	
+
   * Prevents memory leaks and simplifies the code of several views by using `createdByParent` to identify when the child view being removed was automatically created and should now be destroyed.
 
-	
+
   * Adds updated SproutCore image [assets](https://github.com/sproutcore/sproutcore/tree/master/frameworks/foundation/resources/images).
 
-	
+
   * Renames `SC.FILL_PROPORTIONALLY` to `SC.BEST_FILL`. `SC.FILL_PROPORTIONALLY` is still supported but no longer documented.
 
-	
+
   * Allows `SC.State` to represent the empty ("") route. Previously, there was no way for a state to represent the empty route using representRoute:. Now a state can set `representRoute: ""` to be triggered when the empty route is fired.
 
-	
+
   * Added platform detection for the Apache Cordova (formerly phonegap) javascript-to-mobile bridge.
 
-	
+
   * Added retina stylesheet support to module loading, style sheets were being generated but not loading.
 
-	
+
   * Removes `backgroundColor` observer from all `SC.View`s. If anyone actually uses this property AND needs it to update, they'll have to add the `displayProperty` themselves.
 
-	
+
   * Makes `SC.ToolbarView` more intelligent about it's styling: not just styled appropriately for top alignment, layout adjusted to include a top or bottom border.
 
-	
+
   * Refactors the `SC.PickerPane` positioning code for `SC.PICKER_POINTER` and `SC.MENU_POINTER`. With this refactor, the picker pane properly positions itself on the most appropriate side and will slide itself up/down or left/right if it can in order to fit.
 
-	
+
     * adds ability for pointer to automatically adjust its position as the pane shifts left/right or up/down regardless of its size
 
-	
+
     * fixes pane positioning to take into account the borderFrame
 
-	
+
     * adds `windowPadding` property that ensures pickers are positioned a certain amount of distance from all edges of the screen
 
-	
+
     * deprecates the `extraRightOffset` property since the pointer positions itself now
 
 
 
 
-	
+
   * Removes the restriction that render delegate data sources can only retrieve `displayProperties` properties. This restriction is not especially helpful, but worse than that, it forces us to have excess display properties, which means excess observers being set up and running although not every property that effects the display necessarily needs to be observed.
 
-	
+
   * Adds an '`[]`' observer to the array when an '`@each.key`' observer is used. Previously, changes to the array's membership would noisily call `propertyDidChange` while setting up key observers on each additional item. This change gets rid of this shotgun approach that resulted in multiple fires of the observer when adding multiple new items to the array. It also fixes the problem that removing items from the array also failed to call a change to the array.
 
-	
+
   * Adds debug mode only warnings if `invokeOnce` or `invokeLast` are called outside of a run loop. This should prevent developers from writing custom event handling code outside of the run loop, which can cause strange race condition bugs.
 
-	
+
   * Improved performance of scroll view on iOS significantly by using request animation frame.
 
-	
+
   * Optimizes destroy of `SC.View`. This is a slow part of the view lifecycle, due to recursively running through every descendant and notifying `willRemoveFromParent`, `didRemoveFromParent`, `willRemoveChild`, `didRemoveChild` as well as searching through and clearing all of the childViews arrays. This cuts the destroy time almost in half for the average view tree.
 
-	
+
   * All errors are actual `Error` objects, which provide more debuggable stack traces.
 
-	
+
   * Updates jQuery framework to 1.8.3 and removes buffered jQuery.
 
-	
+
     * Patches jQuery to prevent security warnings in IE.
 
 
 
 
-	
+
   * Improves animation support for current and future browsers. The previous platform checks prevented using accelerated layers on non-webkit platforms, plus any browser that dropped the prefixes would indicate that they did not have support for transitions and transforms.
 
-	
+
   * Requesting an index beyond the length of a sparse array should not trigger an index or range request on the delegate and just returned undefined. If you need to prime a sparse array to start loading without setting a length, it's best to use `sparseArray.requestIndex(0)`.
 
-	
+
   * The SC.Store.reset() method now also clears out all of the record arrays.
 
-	
+
   * Added `SC.browser.cssPrefix`, `SC.browser.domPrefix` and `SC.browser.classPrefix`.
 
-	
+
   * Added `SC.browser.experimentalNameFor()`, `SC.browser.experimentalStyleNameFor()` and `SC.browser. experimentalCSSNameFor()` methods for working with experimental browser properties in a[ future-proof manner](http://docs.sproutcore.com/#doc=SC.browser&method=.experimentalNameFor&src=false).
 
-	
+
   * Added `SC.UNSUPPORTED` constant.
 
-	
+
   * The `animate()`function can now accept a target argument as well as a method.
 
-	
+
     * if no target is given the view itself will be the value of `this` in the callback. Previously, this would be the `layoutStyleCalculator`, an internal object of SC.View.
 
-	
+
     * the `animate()` function is thoroughly documented now, including notes on how to hardware accelerate position changes.
 
 
 
 
-	
+
   * `resetAnimation()` has been renamed to `cancelAnimation()`, because reset indicates 'revert', but the default behavior doesn't revert the layout. Reset animation didn't work before either.
 
-	
+
     * added `SC.LayoutState` enum for use by `cancelAnimation()`.
 
 
 
 
-	
+
   * fixes `hasAcceleratedLayer` to be dependent on the layout. Previously, adjusting a non-accelerated layout to an accelerate-able layout failed toupdate the property and `hasAcceleratedLayer` would be incorrect.
 
-	
+
   * Makes `invokeNext` trigger the next run of the run loop if none is scheduled. This makes invokeNext the appropriate method to use when needing the DOM to be up-to-date before running code against it.
 
-	
+
   * Refactors `SC.RenderContext`to simplify the API, introduce consistent naming and make it behave appropriately. This should remove the guess work about whether a function is or is not supported by the context and make it easier to remember the names and parameters of each method.
 
-	
+
     * There are now 3 similar access methods: `attrs()`, `classes()`, `styles()`
 
-	
+
     * There are now 3 similar add methods: `addAttr()`, `addClass()`, `addStyle()`
 
-	
+
     * There are now 3 similar remove methods: `removeAttr()`, `removeClass()`, `removeStyle()`
 
-	
+
     * There are now 2 similar reset methods: `resetClasses()`, `resetStyles()`
 
-	
+
     * Duplicate and inconsistent method names have been deprecated: `css()`, `html()`, `classNames()`, `resetClassNames()`, `attr()`
 
 

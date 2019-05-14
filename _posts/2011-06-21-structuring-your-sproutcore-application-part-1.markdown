@@ -32,7 +32,7 @@ Let's dive into how to structure your SproutCore application so that it's mainta
 
 We'll be going through an application I built for the SproutCore San Francisco Meetup earlier this month. It is available [on Github](https://github.com/ColinCampbell/Contact).
 
-[![](http://blog.sproutcore.com/wp-content/uploads/2011/06/contact-300x191.jpg)](http://blog.sproutcore.com/wp-content/uploads/2011/06/contact.jpg)
+[![](/img/contact-300x191.jpg)](/img/contact.jpg)
 
 To get started, let's generate the application using the following command:
 

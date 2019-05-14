@@ -11,7 +11,7 @@ tags:
 - Dispatch
 ---
 {% raw %}
-[![](http://blog.sproutcore.com/wp-content/uploads/2011/08/handlebars-blog-300x167.png)](http://blog.sproutcore.com/wp-content/uploads/2011/08/handlebars-blog.png)
+[![](/img/handlebars-blog-300x167.png)](/img/handlebars-blog.png)
 
 Greetings all! It's been a bit since our last Dispatch, and the edge waits for nobody, so quite a lot has been going on. This week I'm going to focus on a couple of helpers that have been added to aid in the debugging of view rendering with Handlebars templates.
 

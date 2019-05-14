@@ -32,7 +32,7 @@ So for those that haven't yet tried it, Socket.IO is available [here](http://soc
 Hubbub's app server is written with [Node](http://nodejs.org/) and [Express](http://expressjs.com/). So after installing Socket.IO, there's nothing more to getting it working server-side than:
 
 
-    
+
     app = require('express').createServer({key: …, cert: …, ca: …});
     io = require('socket.io').listen(app);
     app.listen(3443);
@@ -51,7 +51,7 @@ On the client side, you need to first retrieve the Socket.IO JS from the server.
 
 However, I'm just not satisfied with Hubbub being anything less than the best application it can be, and the first improvement I made to reduce loading times was to load Socket.IO dynamically. Without getting into the details of how I use Statecharts, the application begins basically like this:
 
-[caption id="attachment_1839" align="aligncenter" width="245" caption="Initial States Diagram"][![](http://blog.sproutcore.com/wp-content/uploads/2011/09/hubbub-initial-states-diagram-2-245x300.png)](http://blog.sproutcore.com/wp-content/uploads/2011/09/hubbub-initial-states-diagram-2.png)[/caption]
+[caption id="attachment_1839" align="aligncenter" width="245" caption="Initial States Diagram"][![](/img/hubbub-initial-states-diagram-2-245x300.png)](/img/hubbub-initial-states-diagram-2.png)[/caption]
 
 Notice that I don't load Socket.IO until the application reaches the Ready state. The following details describe exactly how I've done this.
 
@@ -64,7 +64,7 @@ Notice that I don't load Socket.IO until the application reaches the Ready state
 To make Socket.IO available to all the apps in my Hubbub project, I wanted it to be its own framework. The relevant directory structure I used is this:
 
 
-    
+
     hubbub/
        frameworks/
           socket.io/
@@ -77,7 +77,7 @@ To make Socket.IO available to all the apps in my Hubbub project, I wanted it to
 I then copied `socket.io.min.js` and `WebSocketMain.swf` from `./node_modules/socket.io/node_modules/socket.io-client/` into my project like so:
 
 
-    
+
     hubbub/
        frameworks/
           socket.io/
@@ -98,7 +98,7 @@ I then copied `socket.io.min.js` and `WebSocketMain.swf` from `./node_modules/so
 The files are now where I want them, but SproutCore's build tools won't load anything in the `frameworks` or `modules` directories unless told to do so, plus I still need to proxy the Socket.IO traffic to my local development server. Here is the relevant part of my Buildfile:
 
 
-    
+
     config :hubbub,
        :required => [
           :'socket.io'
@@ -106,7 +106,7 @@ The files are now where I want them, but SproutCore's build tools won't load any
        :deferred_modules => [
           :'socket.io/io'
        ]
-    
+
     proxy '/socket.io',
        :to => 'localhost:3443',
        :secure => true, # Hubbub is entirely over HTTPS
@@ -127,18 +127,18 @@ Also notice that the `socket.io/io` module is deferred. Therefore it won't be fe
 Finally, to load Socket.IO I added the following to Hubbub's READY state:
 
 
-    
+
     enterState: function() {
-    
+
           // Load Socket.IO and initialize it when it is ready
           SC.Module.loadModule('socket.io/io', this, this.initializeSocketIO);
-    
+
         },
-    
+
         initializeSocketIO: function() {
-    
+
           socket = io.connect('https://localhost:3443');
-    
+
           socket.on('connect', function() {
             // ... for a later post
 
@@ -153,7 +153,7 @@ Finally, to load Socket.IO I added the following to Hubbub's READY state:
 At this point, I see the following in my development console after reaching the READY state:
 
 
-    
+
     SC.Module: Attempting to load 'socket.io/io'
     SC.Module: Module 'socket.io/io' is not loaded, loading now.
     SC.Module: Loading JavaScript file in 'socket.io/io’ -> '/static/socket.io/io/en-ca/current/javascript.js?1315847166'

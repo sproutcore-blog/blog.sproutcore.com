@@ -15,9 +15,9 @@ tags:
 
 Link: [Learn to Test Your SproutCore Apps in San Francisco](http://www.meetup.com/seleniumsanfrancisco/calendar/14966653/)
 
-		
 
-![Selenium pic](http://photos2.meetupstatic.com/photos/event/9/8/5/f/global_12339007.jpeg)
+
+![Selenium pic](/img/global_12339007.jpeg)
 
 
 

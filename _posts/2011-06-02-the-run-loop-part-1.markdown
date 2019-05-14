@@ -42,88 +42,88 @@ If you delve into the RootResponder code, you'll find that SproutCore registers 
 
 
 
-	
+
   * `touchstart`
 
-	
+
   * `touchmove`
 
-	
+
   * `touchend`
 
-	
+
   * `touchcancel`
 
-	
+
   * `keydown`
 
-	
+
   * `keyup`
 
-	
+
   * `beforedeactivate`
 
-	
+
   * `mousedown`
 
-	
+
   * `mouseup`
 
-	
+
   * `click`
 
-	
+
   * `dblclick`
 
-	
+
   * `mousemove`
 
-	
+
   * `selectstart`
 
-	
+
   * `contextmenu`
 
-	
+
   * `focusin`For IE only
 
-	
+
   * `focusout`For IE only
 
-	
+
   * `webkitAnimationStart`
 
-	
+
   * `webkitAnimationIteration`
 
-	
+
   * `webkitAnimationEnd`
 
-	
+
   * `transitionend`For platforms that support CSS transitions only
 
 
 and the following events from the browser's `window`:
 
-	
+
   * `resize`
 
-	
+
   * `focus`For non-IE browsers
 
-	
+
   * `blur`For non-IE browsers
 
 
 If you look at the code in SC.device, you’ll also find these listeners on the `window`:
 
-	
+
   * `online`
 
-	
+
   * `offline`
 
-	
+
   * `orientationchange`
 
 
@@ -147,7 +147,7 @@ So it is actually quite likely that you will never need to manually start a Run 
 
 Earlier, I mentioned that the Run Loop “coordinates code, key-value notifications and timers within your application”.  So, what does that mean exactly?  Well, to explain it best, I'll walk you through a flow diagram of the Run Loop.
 
-[![](http://blog.sproutcore.com/wp-content/uploads/2011/06/run_loop_flow_diagram.jpg)](http://blog.sproutcore.com/wp-content/uploads/2011/06/run_loop_flow_diagram.jpg)
+[![](/img/run_loop_flow_diagram.jpg)](/img/run_loop_flow_diagram.jpg)
 
 You'll notice the functions `invokeOnce()`, `invokeLast()` and `invokeLater()` in the flow diagram.  These are important functions that you are most likely already using to coordinate your code execution. In order to understand exactly how they are and should be used, let’s follow very closely as the Run Loop executes.
 

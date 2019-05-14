@@ -19,16 +19,16 @@ The key consideration you have to make is whether or not you need state manageme
 
 
 
-	
+
   * Server data: If you need to fetch, store, and maintain a data set delivered to you from the server, then SproutCore's bindings model and the DataStore package ensure that what the user sees and what your server knows about never get out of sync.
 
-	
+
   * Application state: In an application's UI, multiple related pieces of information are usually displayed simultaneously: the aggregate number of items in a list, a list of the most recent items in a collection, etc. Using traditional web development techniques to maintain this sort of application state necessitates a large amount of boilerplate code writing and upkeep.
 
 
 Finally, SproutCore helps manage the complexity of the code base and keeps marginal-cost of new features low over the lifetime of your project.
 
-[caption id="attachment_1600" align="aligncenter" width="523" caption="The effort required to scale your application in terms of complexity grows at a much lower rate than a traditional, roll-your-own technique."][![](http://blog.sproutcore.com/wp-content/uploads/2011/08/app-complexity-final1.png)](http://blog.sproutcore.com/wp-content/uploads/2011/08/app-complexity-final1.png)[/caption]
+[caption id="attachment_1600" align="aligncenter" width="523" caption="The effort required to scale your application in terms of complexity grows at a much lower rate than a traditional, roll-your-own technique."][![](/img/app-complexity-final1.png)](/img/app-complexity-final1.png)[/caption]
 
 This is emergent from SproutCore's binding and observer layer. Because you describe the path your data follows from the model layer to the view layer, any new feature that impacts the data in the model layer will automatically propagate through your application.
 
