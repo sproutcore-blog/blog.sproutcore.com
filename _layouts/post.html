@@ -2,9 +2,33 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
-<p class="meta">{{ page.date | date_to_string }}</p>
-
-<div class="post">
-  {{ content }}
-</div>
+  <article class="post type-post status-publish format-standard hentry">
+    <header>
+      <img class="avatar avatar-64 photo"
+        src="http://0.gravatar.com/avatar/6fa92081b3ed457fbc2785e548d4b80c?s=64&d=mm&r=pg">
+      <h1><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
+      <p class="author">written by {{ page.author }}</p>
+      <a href="{{ page.url }}" title="{{ page.title }}" rel="bookmark">
+        <time datetime="{{ page.date | date_to_string }}">
+          <abbr>{{ page.date | date: "%b"}}</abbr> {{ page.date | date: "%e"}}
+        </time>
+      </a>
+    </header>
+    <div class="body">
+      {{ content }}
+    </div>
+  </article>
+  <nav>
+    <ul>
+      {% if page.previous %}
+      <li class="older">
+        <a class="button primary small" href="{{ page.previous.url }}" rel="prev"><span>Previous Post</span></a>
+      </li>
+      {% endif %}
+      {% if page.next %}
+      <li class="newer">
+        <a class="button primary small" href="{{ page.next.url }}" rel="next"><span>Next Post</span></a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
