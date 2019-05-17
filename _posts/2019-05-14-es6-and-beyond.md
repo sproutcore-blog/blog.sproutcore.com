@@ -238,4 +238,5 @@ In this post I have set out a few of the issues that cause SproutCore still not
 to be rewritten in more modern versions of ES6. Next time I am going to write
 about a few possible solutions.
 
-
+### Comments
+The SproutCore blog has moved to github pages. Please use [the issue tracker](https://github.com/sproutcore-blog/sproutcore-blog/issues) to leave any comments!
